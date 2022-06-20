@@ -1,0 +1,27 @@
+{
+  "name": "devutil",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.1",
+    "add": "^2.0.6",
+    "ant-design-vue": "^3.2.7",
+    "json-formatter-js": "^2.3.4",
+    "json-to-pretty-yaml": "^1.2.2",
+    "moment": "^2.29.3",
+    "vue": "^3.2.25",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "unplugin-vue-components": "^0.19.6",
+    "vite": "^2.9.9"
+  }
+}
