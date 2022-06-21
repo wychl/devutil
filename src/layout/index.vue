@@ -11,18 +11,19 @@
         <a-menu-item key="timestamp">
           <router-link to="/timestamp">时间戳</router-link>
         </a-menu-item>
+        <a-menu-item key="imagebase64">
+          <router-link to="/imagebase64">图片Base64</router-link>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>
-      <a-layout-content
-        :style="{
+      <a-layout-content :style="{
           background: '#fff',
           height: '100vh',
           width: '100%',
           marginLeft: '20px',
           padding: '10px',
-        }"
-      >
+        }">
         <router-view></router-view>
       </a-layout-content>
       <!-- <a-layout-footer :style="{ textAlign: 'center' }">

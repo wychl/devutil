@@ -40,6 +40,17 @@ const routes = [
             }
         ]
     },
+    {
+        path: '/imagebase64',
+        component: Layout,
+        children: [
+            {
+                path: '/imagebase64',
+                component: () => import('../views/ImageBase64/index.vue'),
+                name: '图片Base64'
+            }
+        ]
+    },
 ]
 
 const router = createRouter({
