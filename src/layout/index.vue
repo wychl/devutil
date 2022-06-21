@@ -11,6 +11,9 @@
         <a-menu-item key="timestamp">
           <router-link to="/timestamp">时间戳</router-link>
         </a-menu-item>
+        <a-menu-item key="random">
+          <router-link to="/random">随机字符串</router-link>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>

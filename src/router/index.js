@@ -40,6 +40,17 @@ const routes = [
             }
         ]
     },
+    {
+        path: '/random',
+        component: Layout,
+        children: [
+            {
+                path: '/random',
+                component: () => import('../views/Random/index.vue'),
+                name: '随机字符串'
+            }
+        ]
+    },
 ]
 
 const router = createRouter({
