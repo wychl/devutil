@@ -36,6 +36,9 @@ const img = ref("")
 const qrCodeData = ref("")
 const imgData = ref("")
 
+var sab = new SharedArrayBuffer(1024);
+worker.postMessage(sab);
+
 
 const generate = () => {
   // With promises

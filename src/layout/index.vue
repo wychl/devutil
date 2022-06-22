@@ -17,6 +17,9 @@
         <a-menu-item key="qrcode">
           <router-link to="/qrcode">二维码</router-link>
         </a-menu-item>
+        <a-menu-item key="imageprocess">
+          <router-link to="/imageprocess">图片处理</router-link>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>

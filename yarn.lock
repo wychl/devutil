@@ -1085,6 +1085,11 @@ warning@^4.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
+wasm-vips@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/wasm-vips/-/wasm-vips-0.0.2.tgz#8fba1489943b6f6fb999c8135cf66de1d8d83dc0"
+  integrity sha512-P/fzw5HdE0cJlUPildZjhdJpB8Tfegu/tEwY6HWGyyLk/FxvDHp76giJ08fog+rVZDWANR09FJWwWVUQat5QMw==
+
 webpack-sources@^3.2.3:
   version "3.2.3"
   resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"

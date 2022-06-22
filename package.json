@@ -19,7 +19,8 @@
     "qrcode-decoder": "^0.3.1",
     "vue": "^3.2.25",
     "vue-router": "4",
-    "vue3-json-viewer": "^2.2.2"
+    "vue3-json-viewer": "^2.2.2",
+    "wasm-vips": "^0.0.2"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.0",

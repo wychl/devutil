@@ -62,6 +62,17 @@ const routes = [
             }
         ]
     },
+    {
+        path: '/imageprocess',
+        component: Layout,
+        children: [
+            {
+                path: '/imageprocess',
+                component: () => import('../views/ImageProcess/index.vue'),
+                name: '图片处理'
+            }
+        ]
+    },
 ]
 
 const router = createRouter({
