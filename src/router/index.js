@@ -51,6 +51,17 @@ const routes = [
             }
         ]
     },
+    {
+        path: '/qrcode',
+        component: Layout,
+        children: [
+            {
+                path: '/qrcode',
+                component: () => import('../views/QRCode/index.vue'),
+                name: '二维码'
+            }
+        ]
+    },
 ]
 
 const router = createRouter({
