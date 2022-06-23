@@ -1,4 +1,7 @@
 <template>
+  图片处理
+</template>
+<!-- <template>
   <a-row>
     <a-col :span="6">
       <input type="file" class="upload" @change="change" name="base64img" accept="image/*">
@@ -88,4 +91,4 @@ body {
   padding: 20px;
 }
 </style>
-
+ -->

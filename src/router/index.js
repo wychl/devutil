@@ -48,7 +48,6 @@ const routes = [
                 path: '/random',
                 component: () => import('../views/Random/index.vue'),
                 name: '随机字符串',
-                path: '/random',
             }]
     },
     {

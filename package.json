@@ -12,6 +12,7 @@
     "@tauri-apps/api": "^1.0.1",
     "add": "^2.0.6",
     "ant-design-vue": "^3.2.7",
+    "js-base64": "^3.7.2",
     "json-formatter-js": "^2.3.4",
     "json-to-pretty-yaml": "^1.2.2",
     "moment": "^2.29.3",

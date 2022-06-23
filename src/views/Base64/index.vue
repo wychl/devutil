@@ -6,13 +6,13 @@
         :auto-size="{ minRows: 27, maxRows: 30 }"
       />
     </a-col>
-    <a-col :span="4" :style="{ marginTop: 'auto',marginBottom: 'auto' }">
+    <a-col :span="4" :style="{ marginTop: 'auto', marginBottom: 'auto' }">
       <div>
         <div>
-          <a-button @click="encode" type="primary">编码</a-button>
+          <a-button @click="encodeStr" type="primary">编码</a-button>
         </div>
         <div :style="{ marginTop: '20px' }">
-          <a-button @click="decode" type="primary">解码</a-button>
+          <a-button @click="decodeStr" type="primary">解码</a-button>
         </div>
       </div>
     </a-col>
@@ -27,21 +27,24 @@
 
 <script setup>
 import { ref } from "vue";
-import { invoke } from "@tauri-apps/api/tauri";
+// import { invoke } from "@tauri-apps/api/tauri";
+import { encode, decode } from "js-base64";
 
 const input = ref("");
-const output = ref("");
+const output = ref("xxx");
 
-function encode() {
-  invoke("base64_encode", { input: input.value }).then(
-    (res) => (output.value = res)
-  );
-}
+const encodeStr = () => {
+  output.value = encode(input.value);
+  // invoke("base64_encode", { input: input.value }).then(
+  //   (res) => (output.value = res)
+  // );
+};
 
-function decode() {
-  invoke("base64_decode", { input: input.value }).then(
-    (res) => (output.value = res)
-  );
+function decodeStr() {
+  output.value = decode(input.value);
+  // invoke("base64_decode", { input: input.value }).then(
+  //   (res) => (output.value = res)
+  // );
 }
 </script>
 
