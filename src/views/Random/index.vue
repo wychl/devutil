@@ -3,34 +3,46 @@
     <a-col :span="12">
       <a-row :gutter="5">
         <a-col :span="6">生成数量:</a-col>
-        <a-col :span="18">
+        <a-col :span="12">
           <a-slider v-model:value="data.length" />
+        </a-col>
+        <a-col :span="6">
+          <a-input-number v-model:value="data.length" style="margin-left: 16px" />
         </a-col>
       </a-row>
       <a-row :gutter="5">
         <a-col :span="6">大写字母长度:</a-col>
-        <a-col :span="18">
+        <a-col :span="12">
           <a-slider v-model:value="data.uppercase_length" />
+        </a-col>
+        <a-col :span="6">
+          <a-input-number v-model:value="data.uppercase_length" style="margin-left: 16px" />
         </a-col>
       </a-row>
       <a-row :gutter="5">
         <a-col :span="6">小写字母长度</a-col>
-        <a-col :span="18">
+        <a-col :span="12">
           <a-slider v-model:value="data.lowercase_length" />
+        </a-col>
+        <a-col :span="6">
+          <a-input-number v-model:value="data.lowercase_length" style="margin-left: 16px" />
         </a-col>
       </a-row>
       <a-row :gutter="5">
         <a-col :span="6">数字长度</a-col>
-        <a-col :span="18">
+        <a-col :span="12">
           <a-slider v-model:value="data.digital_length" />
+        </a-col>
+        <a-col :span="6">
+          <a-input-number v-model:value="data.digital_length" style="margin-left: 16px" />
         </a-col>
       </a-row>
     </a-col>
-    <a-col :span="12">
-      <div v-for="value in list">
-        {{ value }}
-      </div>
-    </a-col>
+  </a-row>
+  <a-row class="random-value">
+    <div v-for="value in list">
+      {{ value }}
+    </div>
   </a-row>
 </template>
 
@@ -80,6 +92,9 @@ watch(data, (newValue, oldValue) => {
 <style scoped>
 .ant-row {
   margin: 20px;
+}
+.random-value {
+  overflow-x: auto;
 }
 </style>
 

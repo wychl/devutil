@@ -7,12 +7,12 @@ import Layout from '../layout/index.vue'
 // 我们后面再讨论嵌套路由。
 const routes = [
     {
-        path: '/',
+        path: '',
         component: Layout,
         hidden: true,
         children: [
             {
-                path: '/',
+                path: '',
                 component: () => import('../views/Base64/index.vue'),
                 name: 'Base64'
             }

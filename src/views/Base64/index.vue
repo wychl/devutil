@@ -28,20 +28,20 @@
 <script setup>
 import { ref } from "vue";
 // import { invoke } from "@tauri-apps/api/tauri";
-import { encode, decode } from "js-base64";
+import { Base64 } from "js-base64";
 
 const input = ref("");
-const output = ref("xxx");
+const output = ref("");
 
 const encodeStr = () => {
-  output.value = encode(input.value);
+  output.value = Base64.encode(input.value);
   // invoke("base64_encode", { input: input.value }).then(
   //   (res) => (output.value = res)
   // );
 };
 
 function decodeStr() {
-  output.value = decode(input.value);
+  output.value = Base64.decode(input.value);
   // invoke("base64_decode", { input: input.value }).then(
   //   (res) => (output.value = res)
   // );

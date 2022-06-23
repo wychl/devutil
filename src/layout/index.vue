@@ -1,6 +1,6 @@
 <template>
   <a-layout class="layout">
-    <a-layout-sider :style="{ height: '100vh' }">
+    <a-layout-sider class="dev-menu" v-if="!collapsed">
       <a-menu v-model:selectedKeys="selectedKeys">
         <a-menu-item key="base64">
           <router-link to="/">Base64</router-link>
@@ -25,21 +25,14 @@
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
-    <a-layout>
-      <a-layout-content
-        :style="{
-          background: '#fff',
-          height: '100vh',
-          width: '100%',
-          marginLeft: '20px',
-          padding: '10px',
-        }"
-      >
+    <a-layout class="dev-content" :style="{ marginLeft: marginLeft }">
+      <a-layout-header style="background: #fff; padding: 0">
+        <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" />
+        <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+      </a-layout-header>
+      <a-layout-content>
         <router-view></router-view>
       </a-layout-content>
-      <!-- <a-layout-footer :style="{ textAlign: 'center' }">
-                Ant Design ©2018 Created by Ant UED
-            </a-layout-footer> -->
     </a-layout>
   </a-layout>
 </template>
@@ -53,8 +46,10 @@ import {
   AppstoreOutlined,
   TeamOutlined,
   ShopOutlined,
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
 } from "@ant-design/icons-vue";
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, watch } from "vue";
 export default defineComponent({
   components: {
     UserOutlined,
@@ -65,27 +60,64 @@ export default defineComponent({
     AppstoreOutlined,
     TeamOutlined,
     ShopOutlined,
+    MenuUnfoldOutlined,
+    MenuFoldOutlined
   },
+
   setup() {
     return {
       selectedKeys: ref<string[]>(["4"]),
+      collapsed: ref(false),
+      marginLeft: ref('200px'),
     };
   },
+  watch: {
+    collapsed(value, oldValue) {
+      if (value) {
+        this.marginLeft = '0px'
+      } else {
+        this.marginLeft = '200px'
+      }
+    }
+  }
 });
 </script>
 <style scoped>
-.layout {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
 .ant-layout-sider {
   background: #fff;
 }
 
-.ant-layout-header {
-  background-color: aliceblue;
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+  border-right: none;
+}
+
+.dev-menu {
+  overflow: auto;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px
+}
+
+.dev-content {
+  margin-left: 200px;
+  background: #fff;
+  min-height: 100vh;
+  overflow-x: auto;
+  padding: 0px 50px;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.trigger:hover {
+  color: #1890ff;
 }
 </style>
