@@ -14,6 +14,9 @@
         <a-menu-item key="random">
           <router-link to="/random">随机字符串</router-link>
         </a-menu-item>
+        <a-menu-item key="imagebase64">
+          <router-link to="/imagebase64">图片Base64</router-link>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>

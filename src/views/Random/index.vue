@@ -64,8 +64,12 @@ watch(data, (newValue, oldValue) => {
     }
 
     let randomStr = "";
-    for (let i = 0; i < strList.length; i++) {
-      randomStr += strList.charAt(Math.floor(Math.random() * strList.length));
+    let length = strList.length;
+    for (let i = length; i >= 0; i--) {
+      const index = Math.floor(Math.random() * length);
+      randomStr += strList.charAt(index);
+      strList = strList.slice(0, index) + strList.slice(index + 1, length);
+      length = strList.length;
     }
     randomList.push(randomStr);
   }

@@ -47,7 +47,17 @@ const routes = [
             {
                 path: '/random',
                 component: () => import('../views/Random/index.vue'),
-                name: '随机字符串'
+                name: '随机字符串',
+                path: '/random',
+            }]
+    },
+    {
+        component: Layout,
+        children: [
+            {
+                path: '/imagebase64',
+                component: () => import('../views/ImageBase64/index.vue'),
+                name: '图片Base64'
             }
         ]
     },
