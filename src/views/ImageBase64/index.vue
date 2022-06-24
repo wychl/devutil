@@ -1,16 +1,14 @@
 <template>
   <a-row>
-    <a-col :span="6">
+    <a-col :span="4">
       <input type="file" class="upload" @change="change" name="base64img" accept="image/*">
+    </a-col>
+    <a-col :span="20">
+      <img :src="imgData" :style="{ height: 'auto', width: 'auto', maxHeight: '560px', maxWidth: '500px' }" />
     </a-col>
   </a-row>
   <a-row :gutter="24">
-    <a-col :span="10">
-      <img :src="imgData" :style="{ height: 'auto', width: 'auto', maxHeight: '560px', maxWidth: '500px' }" />
-    </a-col>
-    <a-col :span="14">
-      <a-textarea v-model:value="imgData" :auto-size="{ minRows: 25, maxRows: 25 }" />
-    </a-col>
+    <a-textarea v-model:value="imgData" :auto-size="{ minRows: 25, maxRows: 25 }" />
   </a-row>
 </template>
 

@@ -39,11 +39,9 @@
       </a-row>
     </a-col>
   </a-row>
-  <a-row class="random-value">
-    <div v-for="value in list">
-      {{ value }}
-    </div>
-  </a-row>
+  <div class="random-value" v-for="value in list">
+    {{ value }}
+  </div>
 </template>
 
 <script setup>
