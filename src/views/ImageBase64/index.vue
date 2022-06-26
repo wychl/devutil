@@ -14,7 +14,7 @@
 
 <script setup>
 import { ref } from "vue";
-const imgData = ref("")
+const imgData = ref(null)
 const change = (event) => {
   event.preventDefault()
   const reader = new FileReader();
@@ -31,20 +31,14 @@ const change = (event) => {
   margin: 20px;
 }
 
-
-.upload {
-  color: transparent;
-}
-
 .upload::-webkit-file-upload-button {
   visibility: hidden;
 }
 
 .upload::before {
-  content: 'Select some files';
-  color: black;
+  content: '上传文件';
   display: inline-block;
-  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
   border: 1px solid #999;
   border-radius: 3px;
   padding: 5px 8px;
@@ -61,16 +55,8 @@ const change = (event) => {
   border-color: black;
 }
 
-.upload:active {
-  outline: 0;
-}
-
 .upload:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-}
-
-body {
-  padding: 20px;
 }
 </style>
 
