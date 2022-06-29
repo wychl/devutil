@@ -1,34 +1,53 @@
 <template>
   <a-layout class="layout">
-    <a-layout-sider class="dev-menu" v-if="!collapsed">
-      <a-menu v-model:selectedKeys="selectedKeys">
+    <a-layout-sider class="dev-menu" v-model:collapsed="collapsed" collapsible>
+      <a-menu v-model:selectedKeys="selectedKeys" mode="inline">
         <a-menu-item key="base64">
-          <router-link to="/">Base64</router-link>
+          <user-outlined />
+          <span>
+            <router-link to="/">Base64</router-link>
+          </span>
         </a-menu-item>
         <a-menu-item key="json">
-          <router-link to="/json">Json</router-link>
+          <user-outlined />
+          <span>
+            <router-link to="/json">Json</router-link>
+          </span>
         </a-menu-item>
         <a-menu-item key="timestamp">
-          <router-link to="/timestamp">时间戳</router-link>
+          <user-outlined />
+          <span>
+            <router-link to="/timestamp">时间戳</router-link>
+          </span>
         </a-menu-item>
         <a-menu-item key="random">
-          <router-link to="/random">随机字符串</router-link>
+          <user-outlined />
+          <span>
+            <router-link to="/random">随机字符串</router-link>
+          </span>
         </a-menu-item>
         <a-menu-item key="imagebase64">
-          <router-link to="/imagebase64">图片Base64</router-link>
+          <user-outlined />
+          <span>
+            <router-link to="/imagebase64">图片Base64</router-link>
+          </span>
         </a-menu-item>
         <a-menu-item key="qrcode">
-          <router-link to="/qrcode">二维码</router-link>
+          <user-outlined />
+          <span>
+            <router-link to="/qrcode">二维码</router-link>
+          </span>
         </a-menu-item>
         <a-menu-item key="imageprocess">
-          <router-link to="/imageprocess">图片处理</router-link>
+          <user-outlined />
+          <span>
+            <router-link to="/imageprocess">图片处理</router-link>
+          </span>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout class="dev-content" :style="{ marginLeft: marginLeft }">
       <a-layout-header style="background: #fff; padding: 0">
-        <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" />
-        <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
       </a-layout-header>
       <a-layout-content>
         <router-view></router-view>
@@ -83,7 +102,7 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.ant-layout-sider {
+/* .ant-layout-sider {
   background: #fff;
 }
 
@@ -91,9 +110,11 @@ export default defineComponent({
 .ant-menu-vertical,
 .ant-menu-vertical-left {
   border-right: none;
-}
+} */
 
-.dev-menu {
+
+
+/* .dev-menu {
   overflow: auto;
   height: 100vh;
   position: fixed;
@@ -101,15 +122,15 @@ export default defineComponent({
   top: 0;
   bottom: 0;
   width: 200px
-}
+} */
 
-.dev-content {
+/* .dev-content {
   margin-left: 200px;
   background: #fff;
   min-height: 100vh;
   overflow-x: auto;
   padding: 0px 50px;
-}
+} */
 
 .trigger {
   font-size: 18px;
@@ -117,6 +138,7 @@ export default defineComponent({
   cursor: pointer;
   transition: color 0.3s;
 }
+
 .trigger:hover {
   color: #1890ff;
 }
