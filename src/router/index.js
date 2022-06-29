@@ -82,6 +82,28 @@ const routes = [
             }
         ]
     },
+    {
+        path: '/jwt',
+        component: Layout,
+        children: [
+            {
+                path: '/jwt',
+                component: () => import('../views/JWTDecode/index.vue'),
+                name: 'JWT'
+            }
+        ]
+    },
+    {
+        path: '/jwtencode',
+        component: Layout,
+        children: [
+            {
+                path: '/jwtencode',
+                component: () => import('../views/JWTEncode/index.vue'),
+                name: 'JWTEncode'
+            }
+        ]
+    },
 ]
 
 const router = createRouter({

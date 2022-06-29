@@ -44,6 +44,18 @@
             <router-link to="/imageprocess">图片处理</router-link>
           </span>
         </a-menu-item>
+        <a-menu-item key="jwt">
+          <user-outlined />
+          <span>
+            <router-link to="/jwt">JWTDecode</router-link>
+          </span>
+        </a-menu-item>
+        <a-menu-item key="jwtencode">
+          <user-outlined />
+          <span>
+            <router-link to="/jwtencode">JWTEncode</router-link>
+          </span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout class="dev-content" :style="{ marginLeft: marginLeft }">
