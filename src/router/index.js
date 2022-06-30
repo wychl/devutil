@@ -104,6 +104,17 @@ const routes = [
             }
         ]
     },
+    {
+        path: '/markdown',
+        component: Layout,
+        children: [
+            {
+                path: '/markdown',
+                component: () => import('../views/Markdown/index.vue'),
+                name: 'markdown'
+            }
+        ]
+    },
 ]
 
 const router = createRouter({

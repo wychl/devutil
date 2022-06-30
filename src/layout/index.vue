@@ -56,11 +56,16 @@
             <router-link to="/jwtencode">JWTEncode</router-link>
           </span>
         </a-menu-item>
+        <a-menu-item key="markdown">
+          <user-outlined />
+          <span>
+            <router-link to="/markdown">Markdown</router-link>
+          </span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout class="dev-content" :style="{ marginLeft: marginLeft }">
-      <a-layout-header style="background: #fff; padding: 0">
-      </a-layout-header>
+      <a-layout-header style="background: #fff; padding: 0"> </a-layout-header>
       <a-layout-content>
         <router-view></router-view>
       </a-layout-content>
@@ -92,25 +97,25 @@ export default defineComponent({
     TeamOutlined,
     ShopOutlined,
     MenuUnfoldOutlined,
-    MenuFoldOutlined
+    MenuFoldOutlined,
   },
 
   setup() {
     return {
       selectedKeys: ref<string[]>(["4"]),
       collapsed: ref(false),
-      marginLeft: ref('200px'),
+      marginLeft: ref("200px"),
     };
   },
   watch: {
     collapsed(value, oldValue) {
       if (value) {
-        this.marginLeft = '0px'
+        this.marginLeft = "0px";
       } else {
-        this.marginLeft = '200px'
+        this.marginLeft = "200px";
       }
-    }
-  }
+    },
+  },
 });
 </script>
 <style scoped>
@@ -123,8 +128,6 @@ export default defineComponent({
 .ant-menu-vertical-left {
   border-right: none;
 } */
-
-
 
 /* .dev-menu {
   overflow: auto;
