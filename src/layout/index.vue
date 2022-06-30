@@ -62,6 +62,12 @@
             <router-link to="/markdown">Markdown</router-link>
           </span>
         </a-menu-item>
+        <!-- <a-menu-item key="richtext">
+          <user-outlined />
+          <span>
+            <router-link to="/richtext">RichText</router-link>
+          </span>
+        </a-menu-item> -->
       </a-menu>
     </a-layout-sider>
     <a-layout class="dev-content" :style="{ marginLeft: marginLeft }">

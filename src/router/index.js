@@ -115,6 +115,17 @@ const routes = [
             }
         ]
     },
+    {
+        path: '/richtext',
+        component: Layout,
+        children: [
+            {
+                path: '/richtext',
+                component: () => import('../views/RichText/index.vue'),
+                name: 'richtext'
+            }
+        ]
+    },
 ]
 
 const router = createRouter({
